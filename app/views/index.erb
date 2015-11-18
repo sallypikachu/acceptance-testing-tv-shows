@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Television Shows</title>
+  <link rel="stylesheet" type="text/css" href="<%="style.css"%>"/>
+</head>
+
+<body>
+  <h1>List of Shows</h1>
+
+  <% @shows.each do |show| %>
+  <h2><%= show[:title] %> (<%=show[:network]%>)</h2>
+  <p><%= show[:starting_year]%></p>
+  <p><%= show[:synopsis] %></p>
+  <p><%= show[:genre] %></p>
+  <% end %>
+</body>
+</html>
