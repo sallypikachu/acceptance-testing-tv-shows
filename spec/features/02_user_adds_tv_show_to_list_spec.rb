@@ -16,7 +16,7 @@ feature "user adds a new TV show" do
   scenario "successfully add a new show" do
     visit "/television_shows/new"
 
-    fill_in "Title", with: "Friends"
+    fill_in "Title", with: "Friend"
     fill_in "Network", with: "NBC"
     fill_in "Starting Year", with: "1994"
     fill_in "Synopsis", with: "Six friends living in New York city."

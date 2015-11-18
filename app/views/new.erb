@@ -9,23 +9,33 @@
   <h1>Add Show Details</h1>
   <form action="/television_shows/new" method="post">
     <label for="title">Title:</label>
-    <input type="text" id="title" name="title">
+    <input type="text" id="title" name="title" required>
 
     <label for="network">Network:</label>
-    <input type="text" id="network" name="network">
+    <input type="text" id="network" name="network" required>
 
     <label for="starting_year">Starting Year:</label>
-    <input type="text" id="starting_year" name="starting_year">
+    <input type="text" id="starting_year" name="starting_year"required>
 
     <label for="synopsis">Synopsis:</label>
-    <input type="text" id="synopsis" name="synopsis">
+    <input type="text" id="synopsis" name="synopsis"required>
 
     <label for="genre">Genre:</label>
+    <select name="Genre">
     <%TelevisionShow::GENRES.each do |genre|%>
-    <input type="radio" id="genre" name="genre" value="<%=genre%>"> <%=genre.capitalize%>
-    <%end%>
+      <option value="<%=genre%>"> <%=genre.capitalize%></option>
+      <%end%>
+    </select>
 
     <input type="submit" value="Add TV Show">
   </form>
+
+  <%if @not_filled%>
+    Please fill in all required fields
+    <%end%>
+
+<%if @boolean%>
+  This show is already in the database
+  <%end%>
 </body>
 </html>
